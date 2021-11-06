@@ -10,9 +10,9 @@ from polls import models
 
 # Create your views here.
 def index(req):
-    latest_question_list =  Question.objects.order_by('-pub_date')
+    question_list =  Question.objects.order_by('-pub_date')
     template = loader.get_template('polls/index.html')
-    context = {'latest_question_list': latest_question_list}
+    context = {'question_list': question_list}
     return HttpResponse(template.render(context, req))
 
 

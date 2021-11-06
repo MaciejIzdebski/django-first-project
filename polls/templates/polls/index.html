@@ -1,7 +1,7 @@
-{% if latest_question_list %}
+{% if question_list %}
     You have following questions:
     <ul>
-        {% for question in latest_question_list %}
+        {% for question in question_list %}
             <li style="{{ question.was_recently_published | yesno:'font-weight: 600,,' }}">
                 <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
                 {% if question.was_recently_published %}
